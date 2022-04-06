@@ -1,0 +1,407 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-family: 'Raleway';
+  font-weight: 700;
+  color: #000;
+  background-image: url(../img/backgroundt.png);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1200px;
+
+}
+
+nav.page-header {
+  background: #000;
+}
+
+ul.page-header.menubar {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+nav a {
+  text-transform: uppercase;
+  color: #a0d93f;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #6c66e3;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Only re-adding if necessary in 1.10
+a:visited {
+  color: var(--lime-green);
+  font-weight: 500px;
+}
+*/
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #4b22f0;
+}
+
+a:active {
+  color: #a0d93f;
+  font-weight: 500px;
+}
+
+.my-work-link a {
+  color: #a0d93f;
+  background-color: #000;
+}
+
+
+button {
+  border: none;
+  font-family: inherit;
+  background-color: #ad9c00;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba (0, 0, 0, 0.3);
+}
+
+button:hover, button:focus {
+  cursor: pointer;
+  -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition-property: background-color, -webkit-transform;
+  transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
+  transition-property: background-color, transform;
+  transition-property: background-color, transform, -webkit-transform;
+  background-color: #6c66e3;
+}
+
+.cv-button {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #ad9c00;
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+
+}
+button:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition-property: background-color, -webkit-transform;
+  transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
+  transition-property: background-color, transform;
+  transition-property: background-color, transform, -webkit-transform;
+  color: #000;
+  background-color: #6c66e3;
+}
+button:focus {
+  cursor: pointer;
+  -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition-property: background-color, -webkit-transform;
+  transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
+  transition-property: background-color, transform;
+  transition-property: background-color, transform, -webkit-transform;
+  color: #000;
+  background-color: #6c66e3;
+}
+.cv-button:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition-property: background-color, -webkit-transform;
+  transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
+  transition-property: background-color, transform;
+  transition-property: background-color, transform, -webkit-transform;
+  color: #000;
+  background-color: #6c66e3;
+}
+.cv-button:focus {
+  cursor: pointer;
+  -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition-property: background-color, -webkit-transform;
+  transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
+  transition-property: background-color, transform;
+  transition-property: background-color, transform, -webkit-transform;
+  color: #000;
+  background-color: #6c66e3;
+}
+
+.profile__picture {
+  float: left;
+  border-radius: 100px;
+  margin-right: 50px;
+
+
+}
+
+/*Entire home section with image + welcome text -- excluding footer*/
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+
+.page-footer {
+  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+
+
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 700px 10px 700px;
+  grid-template-columns: 700px 700px;
+  grid-gap: 10px;
+}
+
+.grid__item {
+  background-color: #707fe0;
+}
+
+
+
+/* start grid fallback */
+.grid__item {
+ display: inline-block;
+ width: 50%;
+}
+/* end grid fallback */
+
+label {
+  display:inline-block;
+  width: 250px;
+  min-width: 400px;
+}
+
+
+
+thead tr {
+  background-color: #ad9c00;
+}
+
+td {
+  padding: 12px 15px;
+}
+
+tbody tr:first-child {
+  background-color: #707fe0;
+}
+
+tbody tr:nth-last-of-type(even) {
+  background-color: #949feb;
+}
+
+tbody tr:last-child {
+  background-color: #707fe0;
+}
+
+#girl {
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-name: moving-girl;
+          animation-name: moving-girl;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+
+@-webkit-keyframes moving-girl {
+  from {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+
+  to {
+    -webkit-transform: translateX(120px);
+            transform: translateX(120px);
+  }
+}
+
+
+@keyframes moving-girl {
+  from {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+
+  to {
+    -webkit-transform: translateX(120px);
+            transform: translateX(120px);
+  }
+}
+
+/* sun animation and birds both not working coming after girl*/
+#sun {
+  -webkit-animation: 15s moving-sun inifinite linear;
+          animation: 15s moving-sun inifinite linear;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  transform-box: fill-box;
+}
+
+@-webkit-keyframes moving-sun {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes moving-sun {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+/* sun animation and birds both not working coming after girl*/
+
+
+@media all and (max-width: 500px) {
+  .grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+@media all (min-width: 500px) and (max-width: 750) {
+  .grid {
+    -ms-grid-columns: 1fr 10px 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all (max-width: 750px) {
+  .grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+}
+
+
+
+@media(max-width: 500px) {
+
+  html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
+  }
+
+  nav.page-header {
+    height: 200px;
+  }
+
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  ul.page-header.menubar {
+    padding: 0px;
+  }
+
+  nav a {
+    padding: 5px;
+    margin: 0 5px;
+  }
+
+  .wrapper {
+    width: 200px;
+  }
+
+  table {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+}

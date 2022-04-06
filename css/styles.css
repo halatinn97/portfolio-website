@@ -1,0 +1,298 @@
+
+
+:root {
+  --black: #000;
+  --violet: #6c66e3;
+  --violet-lighter:#707fe0;
+  --violet-lightest: #949feb;
+  --lime-green: #a0d93f;
+  --gold: #ad9c00;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Raleway';
+  font-weight: 700;
+  color: var(--black);
+  background-image: url(../img/backgroundt.png);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1200px;
+
+}
+
+nav.page-header {
+  background: var(--black);
+}
+
+ul.page-header.menubar {
+  list-style-type: none;
+  display: flex;
+}
+
+
+nav a {
+  text-transform: uppercase;
+  color: var(--lime-green);
+  padding: 10px;
+  margin: 0 5px;
+}
+
+nav a:hover {
+  border-bottom: 2px solid var(--violet);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+/* Only re-adding if necessary in 1.10
+a:visited {
+  color: var(--lime-green);
+  font-weight: 500px;
+}
+*/
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #4b22f0;
+}
+
+a:active {
+  color: var(--lime-green);
+  font-weight: 500px;
+}
+
+.my-work-link a {
+  color: var(--lime-green);
+  background-color: var(--black);
+}
+
+
+button {
+  border: none;
+  font-family: inherit;
+  background-color: var(--gold);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba (0, 0, 0, 0.3);
+}
+
+button:hover, button:focus {
+  cursor: pointer;
+  transition-duration: 0.8s;
+  transition-property: background-color, transform;
+  background-color: #6c66e3;
+}
+
+.cv-button {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: var(--gold);
+  color: var(--black);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+
+}
+button:hover,
+button:focus,
+.cv-button:hover,
+.cv-button:focus {
+  cursor: pointer;
+  transition-duration: 0.8s;
+  transition-property: background-color, transform;
+  color: var(--black);
+  background-color: var(--violet);
+}
+
+.profile__picture {
+  float: left;
+  border-radius: 100px;
+  margin-right: 50px;
+
+
+}
+
+/*Entire home section with image + welcome text -- excluding footer*/
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+
+.page-footer {
+  clear: both;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 700px 700px;
+  grid-gap: 10px;
+}
+
+.grid__item {
+  background-color: var(--violet-lighter);
+}
+
+
+
+/* start grid fallback */
+.grid__item {
+ display: inline-block;
+ width: 50%;
+}
+/* end grid fallback */
+
+label {
+  display:inline-block;
+  width: 250px;
+  min-width: 400px;
+}
+
+
+
+thead tr {
+  background-color: #ad9c00;
+}
+
+td {
+  padding: 12px 15px;
+}
+
+tbody tr:first-child {
+  background-color: var(--violet-lighter);
+}
+
+tbody tr:nth-last-of-type(even) {
+  background-color: var(--violet-lightest);
+}
+
+tbody tr:last-child {
+  background-color: var(--violet-lighter);
+}
+
+#girl {
+  animation-duration: 10s;
+  animation-name: moving-girl;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+
+@keyframes moving-girl {
+  from {
+    transform: translateX(50px);
+  }
+
+  to {
+    transform: translateX(120px);
+  }
+}
+
+/* sun animation and birds both not working coming after girl*/
+#sun {
+  animation: 15s moving-sun inifinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes moving-sun {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+/* sun animation and birds both not working coming after girl*/
+
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all (min-width: 500px) and (max-width: 750) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+}
+
+
+
+@media(max-width: 500px) {
+
+  html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
+  }
+
+  nav.page-header {
+    height: 200px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  ul.page-header.menubar {
+    padding: 0px;
+  }
+
+  nav a {
+    padding: 5px;
+    margin: 0 5px;
+  }
+
+  .wrapper {
+    width: 200px;
+  }
+
+  table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
