@@ -22,49 +22,108 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
 
 }
 
-nav.page-header {
+header {
   background: var(--black);
+  text-align: center;
+  position: relative;
+  z-index: 999;
+  width: 100%;
 }
 
-ul.page-header.menubar {
-  list-style-type: none;
+
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
   display: flex;
+  align-items: center;
 }
 
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: var(--lime-green);
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--black);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
 
 nav a {
-  text-transform: uppercase;
   color: var(--lime-green);
-  padding: 10px;
-  margin: 0 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
 }
 
 nav a:hover {
-  border-bottom: 2px solid var(--violet);
+  color: var(--violet-lighter);
 }
 
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+  background-color: var(--black);
+  opacity: 0.8;
 }
 
-a {
-  text-decoration: none;
-  color: var(--black);
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
 }
 
-/* Only re-adding if necessary in 1.10
-a:visited {
-  color: var(--lime-green);
-  font-weight: 500px;
-}
-*/
 
 a:hover, a:focus {
   text-decoration: none;
@@ -135,8 +194,6 @@ button:focus,
   margin: 0 auto;
 }
 
-
-
 .page-footer {
   clear: both;
   display: flex;
@@ -145,12 +202,11 @@ button:focus,
 }
 
 
-
-
 .grid {
   display: grid;
-  grid-template-columns: 700px 700px;
+  grid-template-columns: 500px 500px;
   grid-gap: 10px;
+  grid-column-gap: 100px;
 }
 
 .grid__item {
@@ -213,23 +269,6 @@ tbody tr:last-child {
   }
 }
 
-/* revisit part of this animation
-#sun {
-  animation: 15s moving-sun inifinite linear;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
-@keyframes moving-sun {
-  from {
-    transform: rotateZ(0deg);
-  }
-
-  to {
-    transform: rotateZ(360deg);
-  }
-}
-*/
 
 
 @media all and (max-width: 500px) {
@@ -255,46 +294,93 @@ tbody tr:last-child {
 
 }
 
-
-
-@media(max-width: 500px) {
-
+@media screen and (min-width: 360px) and (max-width: 500px) {
   html, body {
     overflow-x: hidden;
   }
+
   body {
     position: relative
   }
 
-  nav.page-header {
-    height: 200px;
-  }
-
-  .container {
-    flex-direction: column;
-  }
-
-  ul.page-header.menubar {
-    padding: 0px;
-  }
-
-  nav a {
-    padding: 5px;
-    margin: 0 5px;
-  }
-
   .wrapper {
-    width: 200px;
-  }
-
-  table {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 10px;
+    width: 100%;
   }
 
   .animation {
     display: none;
   }
+}
+
+
+@media screen and (min-width: 800px) {
+
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    // all: unset;
+
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+    }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+    }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+    }
+
+  nav a:hover::before {
+    transform: scale(1,1);
+  }
+
+
+  table {
+    width: 100%;
+  }
+
 
 }

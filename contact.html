@@ -1,68 +1,72 @@
  <!DOCTYPE html>
- <html>
-    <head>
-      <meta charset="utf-8" name= "viewport"
-      content="width=device-width, initial-scale=1">
-      <title>Contact</title>
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-      <link rel="stylesheet" href="css/normalize.css" type="text/css">
-      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="css/styles.css" type="text/css">
-      </head>
+ <html lang="en">
+   <head>
+     <meta charset="utf-8">
+     <meta name= "viewport" content="width=device-width, initial-scale=1">
+     <title>Hala Tinn - Portfolio</title>
+     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+     <link rel="stylesheet" href="css/normalize.css" type="text/css">
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/styles.css" type="text/css">
+   </head>
 
-      <body>
-        <header>
-          <nav class="page-header">
-            <div class="container">
-            <a href= "index.html">
-            <img class= "page-header.logo" src = "img/logo.png" alt= "Logo of Hala Tinn, a text logo that
-              consists of an illustration of a globe, my profession, being a Full-Stack
-              Developer, and my name" width="200" height="110">
-            </a>
-        <ul role="menubar" class= "page-header menubar">
-          <li role="presentation">
-            <a href= "index.html" class="page-header.menubar__item" role="menuitem">Home</a>
-        </li>
-          <li role="presentation">
-            <a href= "about.html" class="page-header.menubar__item"role="menuitem">About me</a>
-        </li>
-          <li role="presentation">
-            <a href= "contact.html" class="page-header.menubar__item" role="menuitem">Contact</a>
-        </li>
-          <li role="presentation">
-            <a href="work.html" class= "page-header.menubar__item" role="menuitem">My work</a>
-        </li>
-        </ul>
-        </nav>
-      </header>
+   <body>
+     <header>
+       <a href= "index.html">
+       <img class= "page-header logo" src = "img/logo.png" alt= "Logo of Hala Tinn, a text logo that
+         consists of an illustration of a globe, my profession, being a Full-Stack
+         Developer, and my name" width="200" height="110">
+       </a>
+       <input type="checkbox" id="nav-toggle" class="nav-toggle">
+       <nav>
+         <ul role="menubar">
+           <li role="presentation">
+             <a href= "index.html" role="menuitem">Home</a>
+           </li>
+           <li role="presentation">
+             <a href= "about.html" role="menuitem">About me</a>
+           </li>
+           <li role="presentation">
+             <a href= "contact.html" role="menuitem">Contact</a>
+           </li>
+           <li role="presentation">
+             <a href="work.html" role="menuitem">My work</a>
+           </li>
+       </ul>
+       </nav>
+         <label for="nav-toggle" class="nav-toggle-label">
+         <span></span>
+         </label>
+     </header>
+
 
       <div class="wrapper">
+
             <h1>Contact</h1>
-    <form class="contact-form">
     <form action= "formresults.html" method= "GET">
-      <section>
+      <div>
       <label for="Name">Name</label>
-      <input name="Name" class="Name" type="text" required>
-      </section>
+      <input name="Name" id="Name" type="text" required>
+      </div>
 
-      <section>
+      <div>
       <label for="Telephone">Telephone</label>
-      <input name="Telephone" class="Telehone" type="tel">
-      </section>
+      <input name="Telephone" id="Telephone" type="tel">
+      </div>
 
-      <section>
+      <div>
       <label for="Email">Email</label>
-      <input name="Email" class="Email" type="email" required>
-      </section>
+      <input name="Email" id="Email" type="email" required>
+      </div>
 
-      <section>
+      <div>
       <label for="Message">Message me</label>
-      <textarea class="Message" name="Message"></textarea>
-    </section><br>
-    <br>
-      <button class="submit-button" type="submit">Submit</button>
+      <textarea class="Message" id="Message"></textarea>
+      </div><br>
+      <br>
+      <button class="submit" type="submit">Submit</button>
     </form><br>
-  </br>
+  <br>
 
       <div class="address">
         Hala Tinn<br>
