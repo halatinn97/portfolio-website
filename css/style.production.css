@@ -1,15 +1,5 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.3.6,
-* Autoprefixer: v10.3.1
-* Browsers: last 4 version
-*/
-
-
-
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
   font-family: 'Raleway';
@@ -23,57 +13,136 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
 
 }
 
-nav.page-header {
+header {
   background: #000;
+  text-align: center;
+  position: relative;
+  z-index: 999;
+  width: 100%;
 }
 
-ul.page-header.menubar {
-  list-style-type: none;
+
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-
-nav a {
-  text-transform: uppercase;
-  color: #a0d93f;
-  padding: 10px;
-  margin: 0 5px;
-}
-
-nav a:hover {
-  border-bottom: 2px solid #6c66e3;
-}
-
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
 }
 
-a {
+.nav-toggle-label span {
+  display: block;
+  background: #a0d93f;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before {
+  display: block;
+  background: #a0d93f;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::after {
+  display: block;
+  background: #a0d93f;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: #000;
+  width: 100%;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: #a0d93f;
   text-decoration: none;
-  color: #000;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
 }
 
-/* Only re-adding if necessary in 1.10
-a:visited {
-  color: var(--lime-green);
-  font-weight: 500px;
+nav a:hover {
+  color: #707fe0;
 }
-*/
+
+.nav-toggle:checked ~ nav {
+  -webkit-transform: scale(1,1);
+          transform: scale(1,1);
+  background-color: #000;
+  opacity: 0.8;
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  -webkit-transition: opacity 250ms ease-in-out 250ms;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
 
 a:hover, a:focus {
   text-decoration: none;
@@ -104,11 +173,9 @@ button {
 button:hover, button:focus {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
-  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   background-color: #6c66e3;
@@ -128,11 +195,9 @@ button:hover, button:focus {
 button:hover {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
-  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   color: #000;
@@ -141,11 +206,9 @@ button:hover {
 button:focus {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
-  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   color: #000;
@@ -154,11 +217,9 @@ button:focus {
 .cv-button:hover {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
-  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   color: #000;
@@ -167,11 +228,9 @@ button:focus {
 .cv-button:focus {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
-  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   color: #000;
@@ -192,8 +251,6 @@ button:focus {
   margin: 0 auto;
 }
 
-
-
 .page-footer {
   clear: both;
   display: -webkit-box;
@@ -207,14 +264,13 @@ button:focus {
 }
 
 
-
-
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 700px 10px 700px;
-  grid-template-columns: 700px 700px;
+  -ms-grid-columns: 500px 500px;
+      grid-template-columns: 500px 500px;
   grid-gap: 10px;
+  grid-column-gap: 100px;
 }
 
 .grid__item {
@@ -267,7 +323,8 @@ tbody tr:last-child {
           animation-delay: 0s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+          animation-direction: reverse;
 }
 
 
@@ -296,59 +353,25 @@ tbody tr:last-child {
   }
 }
 
-/* sun animation and birds both not working coming after girl*/
-#sun {
-  -webkit-animation: 15s moving-sun inifinite linear;
-          animation: 15s moving-sun inifinite linear;
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-  transform-box: fill-box;
-}
-
-@-webkit-keyframes moving-sun {
-  from {
-    -webkit-transform: rotateZ(0deg);
-            transform: rotateZ(0deg);
-  }
-
-  to {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-
-@keyframes moving-sun {
-  from {
-    -webkit-transform: rotateZ(0deg);
-            transform: rotateZ(0deg);
-  }
-
-  to {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-/* sun animation and birds both not working coming after girl*/
 
 
 @media all and (max-width: 500px) {
   .grid {
     -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 @media all (min-width: 500px) and (max-width: 750) {
   .grid {
-    -ms-grid-columns: 1fr 10px 1fr;
-    grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
 @media all (max-width: 750px) {
   .grid {
     -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     grid-gap: 10px;
   }
 
@@ -358,50 +381,107 @@ tbody tr:last-child {
 
 }
 
-
-
-@media(max-width: 500px) {
-
+@media screen and (min-width: 360px) and (max-width: 500px) {
   html, body {
     overflow-x: hidden;
   }
+
   body {
     position: relative
   }
 
-  nav.page-header {
-    height: 200px;
-  }
-
-  .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  ul.page-header.menubar {
-    padding: 0px;
-  }
-
-  nav a {
-    padding: 5px;
-    margin: 0 5px;
-  }
-
   .wrapper {
-    width: 200px;
+    padding: 10px;
+    width: 100%;
   }
 
-  table {
+  .animation {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 800px) {
+
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr auto minmax(600px, 3fr) 1fr;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    // all: unset;
+
+    position: relative;
+    text-align: left;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: scale(1,1);
+            transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+
+    grid-column: 3 / 4;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
-}
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+    }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+    }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transition: -webkit-transform ease-in-out 250ms;
+    transition: -webkit-transform ease-in-out 250ms;
+    transition: transform ease-in-out 250ms;
+    transition: transform ease-in-out 250ms, -webkit-transform ease-in-out 250ms;
+    }
+
+  nav a:hover::before {
+    -webkit-transform: scale(1,1);
+            transform: scale(1,1);
+  }
+
+
+  table {
+    width: 100%;
+  }
