@@ -90,16 +90,12 @@ nav {
 }
 
 nav ul {
+  margin-left: 2000px; /*IE fallback*/
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/*start internet explorer nav fallback*/
-nav ul {
-  margin-left: 2000px;
-}
-/*end internet explorer nav fallback*/
 
 nav li {
   margin-bottom: 1em;
@@ -209,6 +205,7 @@ button:focus,
 
 
 .grid {
+  display: inline-block; /*IE fallback*/
   display: grid;
   grid-template-columns: 500px 500px;
   grid-gap: 10px;
@@ -219,17 +216,6 @@ button:focus,
   background-color: var(--violet-lighter);
 }
 
-/*start internet explorer grid fallback*/
-.grid {
-  display: inline-block;
-}
-
-.grid_item {
-  width: 50%;
-}
-
-
-/*end internet explorer grid fallback*/
 
 label {
   display:inline-block;
