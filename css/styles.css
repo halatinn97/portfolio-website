@@ -90,7 +90,6 @@ nav {
 }
 
 nav ul {
-  margin-left: 2000px; /*IE fallback*/
   margin: 0;
   padding: 0;
   list-style: none;
@@ -205,7 +204,6 @@ button:focus,
 
 
 .grid {
-  display: inline-block; /*IE fallback*/
   display: grid;
   grid-template-columns: 500px 500px;
   grid-gap: 10px;
