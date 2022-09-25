@@ -141,6 +141,11 @@ a:active {
   background-color: var(--black);
 }
 
+.meet-app-screen {
+  height: 2em;
+  width: 2em;
+}
+
 
 button {
   border: none;
@@ -269,13 +274,13 @@ tbody tr:last-child {
     grid-template-columns: 1fr;
   }
 }
-@media all (min-width: 500px) and (max-width: 750) {
+@media all and (min-width: 500px) and (max-width: 750) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media all (max-width: 750px) {
+@media all and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr;
     grid-gap: 10px;
@@ -323,7 +328,7 @@ tbody tr:last-child {
   }
 
   nav {
-    // all: unset;
+    all: unset;
 
     position: relative;
     text-align: left;

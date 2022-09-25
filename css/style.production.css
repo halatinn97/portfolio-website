@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 body {
   font-family: 'Raleway';
@@ -96,11 +97,14 @@ nav {
   background: #000;
   width: 100%;
   -webkit-transform: scale(1, 0);
+      -ms-transform: scale(1, 0);
           transform: scale(1, 0);
   -webkit-transform-origin: top;
+      -ms-transform-origin: top;
           transform-origin: top;
   -webkit-transition: -webkit-transform 400ms ease-in-out;
   transition: -webkit-transform 400ms ease-in-out;
+  -o-transition: transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
 }
@@ -124,6 +128,7 @@ nav a {
   text-transform: uppercase;
   opacity: 0;
   -webkit-transition: opacity 150ms ease-in-out;
+  -o-transition: opacity 150ms ease-in-out;
   transition: opacity 150ms ease-in-out;
 }
 
@@ -133,6 +138,7 @@ nav a:hover {
 
 .nav-toggle:checked ~ nav {
   -webkit-transform: scale(1,1);
+      -ms-transform: scale(1,1);
           transform: scale(1,1);
   background-color: #000;
   opacity: 0.8;
@@ -141,6 +147,7 @@ nav a:hover {
 .nav-toggle:checked ~ nav a {
   opacity: 1;
   -webkit-transition: opacity 250ms ease-in-out 250ms;
+  -o-transition: opacity 250ms ease-in-out 250ms;
   transition: opacity 250ms ease-in-out 250ms;
 }
 
@@ -160,6 +167,11 @@ a:active {
   background-color: #000;
 }
 
+.meet-app-screen {
+  height: 12em;
+  width: 20em;
+}
+
 
 button {
   border: none;
@@ -174,9 +186,11 @@ button {
 button:hover, button:focus {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   background-color: #6c66e3;
@@ -196,9 +210,11 @@ button:hover, button:focus {
 button:hover {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   color: #000;
@@ -207,9 +223,11 @@ button:hover {
 button:focus {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   color: #000;
@@ -218,9 +236,11 @@ button:focus {
 .cv-button:hover {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   color: #000;
@@ -229,9 +249,11 @@ button:focus {
 .cv-button:focus {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
           transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
+  -o-transition-property: background-color, transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
   color: #000;
@@ -268,8 +290,8 @@ button:focus {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 500px 500px;
-      grid-template-columns: 500px 500px;
+  -ms-grid-columns: 500px 100px 500px;
+  grid-template-columns: 500px 500px;
   grid-gap: 10px;
   grid-column-gap: 100px;
 }
@@ -316,8 +338,7 @@ tbody tr:last-child {
           animation-delay: 0s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  -webkit-animation-direction: reverse;
-          animation-direction: reverse;
+  animation-direction: reverse;
 }
 
 
@@ -351,20 +372,20 @@ tbody tr:last-child {
 @media all and (max-width: 500px) {
   .grid {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
-@media all (min-width: 500px) and (max-width: 750) {
+@media all and (min-width: 500px) and (max-width: 750) {
   .grid {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 100px 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media all (max-width: 750px) {
+@media all and (max-width: 750px) {
   .grid {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 10px;
   }
 
@@ -405,24 +426,32 @@ tbody tr:last-child {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr auto minmax(600px, 3fr) 1fr;
-        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;  }
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;  }
 
   .logo {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2 / 3;
   }
 
   nav {
-    // all: unset;
+    all: unset;
 
     position: relative;
     text-align: left;
     -webkit-transition: none;
+    -o-transition: none;
     transition: none;
     -webkit-transform: scale(1,1);
+        -ms-transform: scale(1,1);
             transform: scale(1,1);
     background: none;
     top: initial;
     left: initial;
+
+    -ms-grid-column: 3;
+
+    -ms-grid-column-span: 1;
 
     grid-column: 3 / 4;
     display: -webkit-box;
@@ -462,15 +491,18 @@ tbody tr:last-child {
     left: 0;
     right: 0;
     -webkit-transform: scale(0, 1);
+        -ms-transform: scale(0, 1);
             transform: scale(0, 1);
     -webkit-transition: -webkit-transform ease-in-out 250ms;
     transition: -webkit-transform ease-in-out 250ms;
+    -o-transition: transform ease-in-out 250ms;
     transition: transform ease-in-out 250ms;
     transition: transform ease-in-out 250ms, -webkit-transform ease-in-out 250ms;
     }
 
   nav a:hover::before {
     -webkit-transform: scale(1,1);
+        -ms-transform: scale(1,1);
             transform: scale(1,1);
   }
 
