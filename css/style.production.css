@@ -1,14 +1,15 @@
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 body {
   font-family: 'Raleway';
   font-weight: 700;
   color: #000;
   background-image: url(../img/backgroundt.png);
   background-size: cover;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
@@ -44,8 +45,8 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .nav-toggle-label span {
@@ -97,11 +98,11 @@ nav {
   background: #000;
   width: 100%;
   -webkit-transform: scale(1, 0);
-      -ms-transform: scale(1, 0);
-          transform: scale(1, 0);
+  -ms-transform: scale(1, 0);
+  transform: scale(1, 0);
   -webkit-transform-origin: top;
-      -ms-transform-origin: top;
-          transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
   -webkit-transition: -webkit-transform 400ms ease-in-out;
   transition: -webkit-transform 400ms ease-in-out;
   -o-transition: transform 400ms ease-in-out;
@@ -136,15 +137,15 @@ nav a:hover {
   color: #707fe0;
 }
 
-.nav-toggle:checked ~ nav {
-  -webkit-transform: scale(1,1);
-      -ms-transform: scale(1,1);
-          transform: scale(1,1);
+.nav-toggle:checked~nav {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
   background-color: #000;
   opacity: 0.8;
 }
 
-.nav-toggle:checked ~ nav a {
+.nav-toggle:checked~nav a {
   opacity: 1;
   -webkit-transition: opacity 250ms ease-in-out 250ms;
   -o-transition: opacity 250ms ease-in-out 250ms;
@@ -152,7 +153,8 @@ nav a:hover {
 }
 
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: none;
   color: #4b22f0;
 }
@@ -167,11 +169,23 @@ a:active {
   background-color: #000;
 }
 
-img.meet-app-screen {
+img.meet-app-screen,
+.angular-app-screen,
+.pokemon-app-screen,
+.movie-app-screen {
   height: 12em;
   width: 20em;
 }
 
+.chat-app-screen {
+  height: 14em;
+  width: 8em;
+}
+
+.todo-app-screen {
+  height: 14em;
+  width: 10em;
+}
 
 button {
   border: none;
@@ -183,11 +197,12 @@ button {
   border-bottom: 2px solid rgba (0, 0, 0, 0.3);
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
   -o-transition-property: background-color, transform;
@@ -207,11 +222,12 @@ button:hover, button:focus {
   border-radius: 3px;
 
 }
+
 button:hover {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
   -o-transition-property: background-color, transform;
@@ -220,11 +236,12 @@ button:hover {
   color: #000;
   background-color: #6c66e3;
 }
+
 button:focus {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
   -o-transition-property: background-color, transform;
@@ -233,11 +250,12 @@ button:focus {
   color: #000;
   background-color: #6c66e3;
 }
+
 .cv-button:hover {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
   -o-transition-property: background-color, transform;
@@ -246,11 +264,12 @@ button:focus {
   color: #000;
   background-color: #6c66e3;
 }
+
 .cv-button:focus {
   cursor: pointer;
   -webkit-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
   -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
   -o-transition-property: background-color, transform;
@@ -282,8 +301,8 @@ button:focus {
   text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 
@@ -302,7 +321,7 @@ button:focus {
 
 
 label {
-  display:inline-block;
+  display: inline-block;
   width: 250px;
   min-width: 400px;
 }
@@ -331,13 +350,13 @@ tbody tr:last-child {
 
 #girl {
   -webkit-animation-duration: 10s;
-          animation-duration: 10s;
+  animation-duration: 10s;
   -webkit-animation-name: moving-girl;
-          animation-name: moving-girl;
+  animation-name: moving-girl;
   -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  animation-delay: 0s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   animation-direction: reverse;
 }
 
@@ -345,12 +364,12 @@ tbody tr:last-child {
 @-webkit-keyframes moving-girl {
   from {
     -webkit-transform: translateX(50px);
-            transform: translateX(50px);
+    transform: translateX(50px);
   }
 
   to {
     -webkit-transform: translateX(120px);
-            transform: translateX(120px);
+    transform: translateX(120px);
   }
 }
 
@@ -358,12 +377,12 @@ tbody tr:last-child {
 @keyframes moving-girl {
   from {
     -webkit-transform: translateX(50px);
-            transform: translateX(50px);
+    transform: translateX(50px);
   }
 
   to {
     -webkit-transform: translateX(120px);
-            transform: translateX(120px);
+    transform: translateX(120px);
   }
 }
 
@@ -375,6 +394,7 @@ tbody tr:last-child {
     grid-template-columns: 1fr;
   }
 }
+
 @media all and (min-width: 500px) and (max-width: 750) {
   .grid {
     -ms-grid-columns: 1fr 100px 1fr;
@@ -396,7 +416,9 @@ tbody tr:last-child {
 }
 
 @media screen and (min-width: 360px) and (max-width: 500px) {
-  html, body {
+
+  html,
+  body {
     overflow-x: hidden;
   }
 
@@ -426,7 +448,8 @@ tbody tr:last-child {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr auto minmax(600px, 3fr) 1fr;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;  }
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
 
   .logo {
     -ms-grid-column: 2;
@@ -442,9 +465,9 @@ tbody tr:last-child {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
-    -webkit-transform: scale(1,1);
-        -ms-transform: scale(1,1);
-            transform: scale(1,1);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
     background: none;
     top: initial;
     left: initial;
@@ -458,11 +481,11 @@ tbody tr:last-child {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
   nav ul {
@@ -474,12 +497,12 @@ tbody tr:last-child {
   nav li {
     margin-left: 3em;
     margin-bottom: 0;
-    }
+  }
 
   nav a {
     opacity: 1;
     position: relative;
-    }
+  }
 
   nav a::before {
     content: '';
@@ -491,19 +514,19 @@ tbody tr:last-child {
     left: 0;
     right: 0;
     -webkit-transform: scale(0, 1);
-        -ms-transform: scale(0, 1);
-            transform: scale(0, 1);
+    -ms-transform: scale(0, 1);
+    transform: scale(0, 1);
     -webkit-transition: -webkit-transform ease-in-out 250ms;
     transition: -webkit-transform ease-in-out 250ms;
     -o-transition: transform ease-in-out 250ms;
     transition: transform ease-in-out 250ms;
     transition: transform ease-in-out 250ms, -webkit-transform ease-in-out 250ms;
-    }
+  }
 
   nav a:hover::before {
-    -webkit-transform: scale(1,1);
-        -ms-transform: scale(1,1);
-            transform: scale(1,1);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
   }
 
 

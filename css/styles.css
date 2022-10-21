@@ -1,7 +1,7 @@
 :root {
   --black: #000;
   --violet: #6c66e3;
-  --violet-lighter:#707fe0;
+  --violet-lighter: #707fe0;
   --violet-lightest: #949feb;
   --lime-green: #a0d93f;
   --gold: #ad9c00;
@@ -10,13 +10,14 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Raleway';
   font-weight: 700;
   color: var(--black);
   background-image: url(../img/backgroundt.png);
   background-size: cover;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
@@ -114,19 +115,20 @@ nav a:hover {
   color: var(--violet-lighter);
 }
 
-.nav-toggle:checked ~ nav {
-  transform: scale(1,1);
+.nav-toggle:checked~nav {
+  transform: scale(1, 1);
   background-color: var(--black);
   opacity: 0.8;
 }
 
-.nav-toggle:checked ~ nav a {
+.nav-toggle:checked~nav a {
   opacity: 1;
   transition: opacity 250ms ease-in-out 250ms;
 }
 
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: none;
   color: #4b22f0;
 }
@@ -141,9 +143,22 @@ a:active {
   background-color: var(--black);
 }
 
-img.meet-app-screen {
+img.meet-app-screen,
+.angular-app-screen,
+.pokemon-app-screen,
+.movie-app-screen {
   height: 12em;
   width: 20em;
+}
+
+.chat-app-screen {
+  height: 14em;
+  width: 8em;
+}
+
+.todo-app-screen {
+  height: 14em;
+  width: 10em;
 }
 
 
@@ -157,7 +172,8 @@ button {
   border-bottom: 2px solid rgba (0, 0, 0, 0.3);
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
   cursor: pointer;
   transition-duration: 0.8s;
   transition-property: background-color, transform;
@@ -175,6 +191,7 @@ button:hover, button:focus {
   border-radius: 3px;
 
 }
+
 button:hover,
 button:focus,
 .cv-button:hover,
@@ -221,7 +238,7 @@ button:focus,
 
 
 label {
-  display:inline-block;
+  display: inline-block;
   width: 250px;
   min-width: 400px;
 }
@@ -274,6 +291,7 @@ tbody tr:last-child {
     grid-template-columns: 1fr;
   }
 }
+
 @media all and (min-width: 500px) and (max-width: 750) {
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -293,7 +311,9 @@ tbody tr:last-child {
 }
 
 @media screen and (min-width: 360px) and (max-width: 500px) {
-  html, body {
+
+  html,
+  body {
     overflow-x: hidden;
   }
 
@@ -321,7 +341,8 @@ tbody tr:last-child {
 
   header {
     display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;  }
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
 
   .logo {
     grid-column: 2 / 3;
@@ -333,7 +354,7 @@ tbody tr:last-child {
     position: relative;
     text-align: left;
     transition: none;
-    transform: scale(1,1);
+    transform: scale(1, 1);
     background: none;
     top: initial;
     left: initial;
@@ -351,12 +372,12 @@ tbody tr:last-child {
   nav li {
     margin-left: 3em;
     margin-bottom: 0;
-    }
+  }
 
   nav a {
     opacity: 1;
     position: relative;
-    }
+  }
 
   nav a::before {
     content: '';
@@ -369,10 +390,10 @@ tbody tr:last-child {
     right: 0;
     transform: scale(0, 1);
     transition: transform ease-in-out 250ms;
-    }
+  }
 
   nav a:hover::before {
-    transform: scale(1,1);
+    transform: scale(1, 1);
   }
 
 
